@@ -1,0 +1,8 @@
+//
+// Icons mixins
+// --------------------------------------------------
+
+@mixin icon-sizing($size) {
+  font-size: $size;
+  line-height: $size;
+}

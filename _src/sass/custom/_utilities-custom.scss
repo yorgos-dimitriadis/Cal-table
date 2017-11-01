@@ -1,0 +1,147 @@
+// Grid element
+.grid-element {
+  padding: 12px 5px;
+  @media (min-width: $screen-sm-min) {
+    padding: 15px 10px;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 25px 15px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    padding: 45px 38px 45px 38px;
+  }
+
+  @media (max-width: $screen-md-max) {
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.grid-element-mod-2 {
+  padding: 12px 0;
+  @media (min-width: $screen-sm-min) {
+    padding: 15px 0;
+  }
+
+  @media (min-width: $screen-md-min) {
+    padding: 25px 0;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    padding: 45px 0;
+  }
+
+  @media (max-width: $screen-md-max) {
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
+
+.row.row-no-gutter > [class*='col'] {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.grid-element-outline {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: -1px;
+    left: -1px;
+    border: 1px solid $gray-lighter;
+  }
+}
+.grid-element-outline-bottom {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid $gray-lighter;
+  }
+}
+
+.grid-system-row {
+
+  @media (max-width: $screen-xs-max) {
+    [class*='col'] {
+      h5,
+      .h5 {
+        font-size: 16px;
+      }
+
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+.cell-box {
+  padding: 0 15px;
+
+  @media (min-width: $screen-lg-min) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    padding: 0;
+  }
+}
+
+.cell-box-minimal {
+  padding: 0 15px;
+
+  @media (min-width: $screen-lg-min) {
+    padding: 0 15px;
+  }
+
+  @media (min-width: 1600px) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    padding: 0;
+  }
+}
+
+.cell-box-medium {
+  padding: 0;
+
+  @media (min-width: $screen-lg-min) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    padding: 0;
+  }
+}
+
+.cell-box-wide {
+  padding: 0 15px;
+
+  @media (min-width: $screen-md-min) {
+    padding: 0 30px;
+  }
+
+  @media (min-width: 1600px) {
+    padding: 0 60px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    padding: 0;
+  }
+}

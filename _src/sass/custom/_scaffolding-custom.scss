@@ -1,0 +1,48 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+// Page styles
+// --------------------------------------------------
+
+.page {
+  overflow: hidden;
+  background-color: $black;
+}
+
+// Links
+
+a {
+  color: $primary;
+  &:hover,
+  &:focus {
+    color: lighten($primary, 85%);
+    outline: none;
+  }
+}
+
+// Horizontal rules
+
+hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-top: 1px solid $hr-border;
+}
+
+.img-fluid {
+  display: block;
+  width: 100%;
+  max-width: none;
+  border: none;
+  outline: none;
+}
+

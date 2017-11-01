@@ -1,0 +1,107 @@
+//
+// One screen page
+// --------------------------------------------------
+.one-screen-page {
+  @include display-flex;
+  .page {
+    &, > * {
+      width: 100%;
+    }
+
+    @include display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(space-between);
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .page-head,
+  .page-foot {
+    background-color: transparent;
+  }
+
+  * {
+    color: $white;
+  }
+
+  .page-head {
+    padding: calc(1em + 4vh) 0 calc(1em + 2vh);
+
+    .brand {
+      svg{
+        text{
+          fill: $white;
+        }
+        path {
+          fill: $brand-primary-lighter;
+        }
+      }
+    }
+  }
+
+  .page-content {
+    padding: calc(1em + 4vh) 0;
+  }
+
+  .page-foot {
+    padding: calc(1em + 2vh) 0 calc(1em + 4vh);
+  }
+
+  .copyright {
+    opacity: .3;
+    color: $white;
+
+    a {
+      &,
+      &:active,
+      &:focus {
+        color: $white;
+      }
+    }
+  }
+
+  .btn-primary {
+    @include button-variant-custom($black, $brand-primary-lighter, $brand-primary-lighter, $black, darken($brand-primary, 15%), darken($brand-primary, 15%));
+  }
+
+  .form-subscribe{
+
+    .form-control {
+      background-color: transparent;
+      @include placeholder($white);
+    }
+  }
+}
+
+@media (min-width: $screen-xs-min) {
+  .one-screen-page {
+    .page {
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: $screen-xl-min) {
+  .one-screen-page {
+    .page-head {
+      padding: 60px 0 20px;
+    }
+
+    .page-content {
+      padding: 10px 0 35px;
+    }
+
+    .page-foot {
+      padding: 20px 0 60px;
+    }
+  }
+}
+
+.ie-10,
+.ie-11 {
+  .one-screen-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

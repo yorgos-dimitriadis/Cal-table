@@ -1,0 +1,137 @@
+/*========================================================
+                      Main Styles override
+=========================================================* /
+body {
+    color: map-get($scheme, primary);
+    font: 300 16px/22px $default-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h2 {
+  color: map-get($scheme, default);
+}
+h3 {
+  color: map-get($scheme, default);
+  a {
+      color: map-get($scheme, contrast);
+      &:hover {
+        color: map-get($scheme, default);
+      }
+  }
+}
+
+*/
+/* line 37, ../../_src/sass/colorScheme-2.scss */
+.page {
+  /* Arrows */ }
+  /* line 39, ../../_src/sass/colorScheme-2.scss */
+  .page .title-overlay--mult {
+    background: rgba(161, 225, 77, 0.45);
+    background-blend-mode: multiply; }
+    /* line 61, ../../_src/sass/custom/_mixins-custom.scss */
+    .lt-ie9 .page .title-overlay--mult {
+      background: none;
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#73A1E14D', endColorstr='#73A1E14D')";
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#73A1E14D', endColorstr='#73A1E14D');
+      zoom: 1; }
+  /* line 5, ../../_src/sass/bootstrap/mixins/_text-emphasis.scss */
+  .page .text-primary {
+    color: #a1e14d; }
+  /* line 8, ../../_src/sass/bootstrap/mixins/_text-emphasis.scss */
+  .page a.text-primary:hover,
+  .page a.text-primary:focus {
+    color: #8ad724; }
+  /* line 55, ../../_src/sass/colorScheme-2.scss */
+  .page .btn-default {
+    color: #2b2c2f;
+    background-color: transparent;
+    border-color: #a1e14d; }
+    /* line 9, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-default:focus, .page .btn-default.focus, .page .btn-default:hover, .page .btn-default:active, .page .btn-default.active, .open > .page .btn-default.dropdown-toggle {
+      color: #fff;
+      background-color: #2b2c2f;
+      border-color: #2b2c2f; }
+    /* line 20, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-default:active, .page .btn-default.active, .open > .page .btn-default.dropdown-toggle {
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15); }
+      /* line 26, ../../_src/sass/custom/mixins/_buttons.scss */
+      .page .btn-default:active:hover, .page .btn-default:active:focus, .page .btn-default:active.focus, .page .btn-default.active:hover, .page .btn-default.active:focus, .page .btn-default.active.focus, .open > .page .btn-default.dropdown-toggle:hover, .open > .page .btn-default.dropdown-toggle:focus, .open > .page .btn-default.dropdown-toggle.focus {
+        color: #fff;
+        background-color: #2b2c2f;
+        border-color: #2b2c2f; }
+    /* line 35, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-default.disabled, .page .btn-default[disabled], fieldset[disabled] .page .btn-default {
+      pointer-events: none;
+      opacity: .5; }
+    /* line 42, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-default .badge {
+      color: transparent;
+      background-color: #2b2c2f; }
+  /* line 58, ../../_src/sass/colorScheme-2.scss */
+  .page .btn-primary {
+    color: #fff;
+    background-color: #303334;
+    border-color: #303334; }
+    /* line 9, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-primary:focus, .page .btn-primary.focus, .page .btn-primary:hover, .page .btn-primary:active, .page .btn-primary.active, .open > .page .btn-primary.dropdown-toggle {
+      color: #303334;
+      background-color: #fff; }
+    /* line 20, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-primary:active, .page .btn-primary.active, .open > .page .btn-primary.dropdown-toggle {
+      -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15); }
+      /* line 26, ../../_src/sass/custom/mixins/_buttons.scss */
+      .page .btn-primary:active:hover, .page .btn-primary:active:focus, .page .btn-primary:active.focus, .page .btn-primary.active:hover, .page .btn-primary.active:focus, .page .btn-primary.active.focus, .open > .page .btn-primary.dropdown-toggle:hover, .open > .page .btn-primary.dropdown-toggle:focus, .open > .page .btn-primary.dropdown-toggle.focus {
+        color: #303334;
+        background-color: #fff; }
+    /* line 35, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-primary.disabled, .page .btn-primary[disabled], fieldset[disabled] .page .btn-primary {
+      pointer-events: none;
+      opacity: .5; }
+    /* line 42, ../../_src/sass/custom/mixins/_buttons.scss */
+    .page .btn-primary .badge {
+      color: #303334;
+      background-color: #fff; }
+  /* line 63, ../../_src/sass/colorScheme-2.scss */
+  .page .offer-block {
+    color: #303334;
+    background-color: #a1e14d; }
+    /* line 66, ../../_src/sass/colorScheme-2.scss */
+    .page .offer-block h5:before {
+      border-top-color: #303334; }
+    @media (min-width: 992px) {
+      /* line 70, ../../_src/sass/colorScheme-2.scss */
+      .page .offer-block:not(.no-triangle):before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 32px 55px 32px;
+        border-color: transparent transparent #a1e14d transparent; }
+      /* line 73, ../../_src/sass/colorScheme-2.scss */
+      .page .offer-block.right-triangle:not(.no-triangle):before {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 32px 55px 32px;
+        border-color: transparent transparent #a1e14d transparent; } }
+  /* line 82, ../../_src/sass/colorScheme-2.scss */
+  .page .slick-prev,
+  .page .slick-next {
+    background: transparent; }
+    /* line 85, ../../_src/sass/colorScheme-2.scss */
+    .page .slick-prev:hover,
+    .page .slick-next:hover {
+      outline: none;
+      background: transparent; }
+      /* line 88, ../../_src/sass/colorScheme-2.scss */
+      .page .slick-prev:hover:before,
+      .page .slick-next:hover:before {
+        color: #fff;
+        background: #a1e14d;
+        border-color: #a1e14d; }
+
+/*# sourceMappingURL=colorScheme-2.css.map */

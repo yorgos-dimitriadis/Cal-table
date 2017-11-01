@@ -1,0 +1,272 @@
+//
+// Links
+// --------------------------------------------------
+.link {
+  display: inline-block;
+}
+
+.link-inline {
+  font: inherit;
+  line-height: inherit;
+
+  color: $brand-primary-lighter;
+
+  &.active,
+  &:active,
+  &:focus {
+    color: $brand-primary;
+  }
+
+  &.hover,
+  &:hover {
+    color: $brand-primary;
+  }
+}
+
+.link-underline {
+  &, &:active, &:focus {
+    text-decoration: underline;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// Sizing
+.link-xs {
+  font-size: 14px;
+}
+
+.link-sm {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.link-md {
+  font-size: 16px;
+  line-height: (30 / 22);
+
+  @media (min-width: $screen-md-min) {
+    font-size: 18px;
+  }
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 20px;
+  }
+
+  @media (min-width: $screen-xl-min) {
+    font-size: 22px;
+  }
+}
+
+.link-lg {
+  font-size: 26px;
+
+  @media (min-width: $screen-lg-min) {
+    font-size: 26px;
+  }
+}
+
+.link-bold {
+  font: 700 14px /18px $font-family-sec;
+  letter-spacing: .04em;
+}
+
+.link-italic {
+  font-style: italic;
+}
+
+.link-hero {
+  position: relative;
+  text-decoration: none;
+  color: $silver-lighter;
+  &:hover,
+  &:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background-color: $silver-lighter;
+  }
+  &.anim:hover:before {
+    @include animation(anim-link-dec .5s ease);
+  }
+}
+
+@include keyframes(anim-link-dec) {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
+// Styles
+.page {
+  .link-default {
+    @include link($gray-base, $brand-primary);
+  }
+  .link-gray-light {
+    @include link($gray-light, $brand-primary);
+  }
+  .link-gray-lightest {
+    @include link($gray-lightest, $brand-primary);
+  }
+  .link-silver-light {
+    @include link($silver-light, $brand-primary);
+  }
+
+  .link-social {
+    @include link($silver-light, $primary);
+  }
+
+  .link-primary {
+    @include link($brand-primary, $gray);
+  }
+
+  .link-primary-lighter {
+    @include link($brand-primary-lighter, $brand-primary);
+  }
+
+  .link-white {
+    @include link($white, $brand-primary);
+    &:hover{
+      border-color: $brand-primary;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .link-white-sm {
+      @include link($white, $brand-primary);
+      &:hover{
+        border-color: $brand-primary;
+      }
+    }
+  }
+
+
+
+  .link-darkest {
+    @include link($gray-darkest, $brand-primary);
+  }
+
+  .rd-navbar-shop {
+
+    .label-inline {
+      display: inline-block;
+      vertical-align: text-top;
+      &:before,
+      &:after {
+        display: inline-block;
+      }
+
+      &:before{
+        content: "(";
+      }
+       &:after{
+         content: ')';
+       }
+    }
+  }
+
+  .link-shop {
+
+    &.link-white {
+      .label-inline {
+        color: $gray-darker;
+      }
+
+      &,
+      &:active,
+      &:focus {
+        .label-inline {
+          background: $white;
+        }
+      }
+
+      &:hover {
+        .label-inline {
+          background: $brand-primary;
+          color: $white;
+        }
+      }
+    }
+    &.link-primary {
+      .label-inline {
+        color: $white;
+      }
+
+      &,
+      &:active,
+      &:focus {
+        .label-inline {
+          background: $brand-primary;
+        }
+      }
+
+      &:hover {
+        .label-inline {
+          background: $gray;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .link-shop-variant-1 {
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+
+    .label-inline {
+      top: 3px;
+      right: 1px;
+      color: $white;
+      background: $brand-primary;
+      z-index: 5;
+    }
+
+    &.link-primary {
+      &:hover {
+        color: $brand-primary;
+
+        .label-inline {
+          background: $brand-primary;
+        }
+      }
+    }
+  }
+}
+
+.link-icon {
+  vertical-align: middle;
+  > * {
+    display: inline-block;
+  }
+
+  > * + * {
+    margin-left: .9em;
+  }
+}
+
+button.link {
+  @include reset-button;
+  transition: .33s all ease;
+}
+
+.link-zoom {
+  transition: .33s all ease;
+  will-change: transform;
+  &:hover{
+   @include transform(scale(1.03));
+  }
+}

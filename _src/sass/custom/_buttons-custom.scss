@@ -1,0 +1,257 @@
+//
+// Custom Buttons Styles
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  transition: .3s ease-out;
+  letter-spacing: 0.05em;
+  border-radius: $border-radius-large;
+  font-size: 14px;
+  font-weight: 700;
+  border-width:3px;
+  padding: $padding-base-vertical 28px;
+
+  @media (min-width: $screen-lg-min) {
+    padding:  $padding-base-vertical $padding-base-horizontal;
+  }
+
+
+  &:focus,
+  &:active,
+  &:active:focus{
+    outline: none;
+  }
+
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+
+  }
+
+  &:active,
+  &.active {
+    @include box-shadow(none);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+
+  }
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+  @include button-variant-custom($gray-base, transparent, $gray-btn-base, $white, $gray-base, $gray-base);
+}
+
+.btn-primary {
+  @include button-variant-custom($white, $brand-primary, $brand-primary, $white, darken($brand-primary, 15%), darken($brand-primary, 15%));
+}
+
+.btn-primary-lighter {
+  @include button-variant-custom($white, $brand-primary-lighter, $brand-primary-lighter, $white, darken($brand-primary, 15%), darken($brand-primary, 15%));
+}
+
+.btn-burnt-sienna {
+  @include button-variant-custom($white, $burnt-sienna, $burnt-sienna, $white, $brand-primary, $brand-primary);
+}
+
+.btn-transparent {
+  @include button-variant-custom($gray-base, transparent, transparent, $white, $brand-primary, $brand-primary);
+}
+
+.btn-white-outline {
+  @include button-variant-custom($white, transparent, $white, $white, darken($brand-primary, 15%), darken($brand-primary, 15%));
+
+  border-width: 1px;
+  line-height: 1.93;
+}
+
+.btn-burnt-sienna-outline {
+  @include button-variant-custom($burnt-sienna, transparent, $burnt-sienna, $white, $burnt-sienna, $burnt-sienna);
+
+  border-width: 1px;
+  line-height: 1.93;
+}
+
+.btn-facebook {
+  @include button-variant-custom($white, $chambray, $chambray, $white, darken($chambray, 15%), darken($chambray, 15%));
+}
+
+.btn-twitter {
+  @include button-variant-custom($white, $curious-blue, $curious-blue, $white, darken($curious-blue, 15%), darken($curious-blue, 15%));
+}
+
+.btn-google-plus {
+  @include button-variant-custom($white, $flame-pea, $flame-pea, $white, darken($flame-pea, 15%), darken($flame-pea, 15%));
+}
+
+
+
+// Success appears as green
+.btn-success {
+
+}
+
+// Info appears as blue-green
+.btn-info {
+
+}
+
+// Warning appears as orange
+.btn-warning {
+
+}
+
+// Danger and error appear as red
+.btn-danger {
+
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+.btn-xs {
+  font-size: 13px;
+  padding: 8px 30px;
+}
+
+.btn-sm {
+  padding: 12px 37px;
+}
+
+.btn-md {
+  font-size: 16px;
+  padding: 13.5px 65px;
+}
+
+.btn-lg {
+  font-size: 18px;
+  padding: 23px 78px;
+}
+
+
+.btn-min-width-sm {
+  min-width: 180px;
+}
+.btn-min-width-md {
+  min-width: 220px;
+}
+
+.btn-fullwidth {
+  width: 100%;
+}
+
+
+// Button Shapes
+// --------------------------------------------------
+
+.btn-shape-default {
+  border-radius: $border-radius-large;
+}
+
+.btn-shape-round {
+  border-radius: 12px;
+}
+
+.btn-shape-square {
+  border-radius: 0;
+}
+
+.btn-shape-circle {
+  border-radius: $border-radius-xl;
+}
+
+.btn-shadow {
+  box-shadow: $shadow-area-md;
+}
+
+
+// Button Icon styles
+// --------------------------------------------------
+
+.btn {
+
+  &.btn-icon {
+
+    span{
+      vertical-align: middle;
+    }
+    .icon {
+      font-size: 24px;
+      line-height: 24px;
+      vertical-align: middle;
+      transition: 0s;
+    }
+
+    &-left{
+      .icon{
+        padding-right: 10px;
+      }
+    }
+
+    &-right{
+      .icon{
+        padding-left: 10px;
+      }
+    }
+
+  }
+}
+
+
+// Reset Button
+@mixin reset-button(){
+  background: none;
+  border: none;
+  display: inline-block;
+  padding: 0;
+  outline: none;
+  outline-offset: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  &::-moz-focus-inner {
+    border: none;
+    padding: 0;
+  }
+}
+
+
+//btn group
+.btn-group-variant-1 {
+  @include display-flex;
+  @include justify-content(space-around);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  &.justify-content-center {
+    @include justify-content(center);
+  }
+}
+
+
+// Btn tags
+
+.btn-tags {
+  border-width: 1px;
+  font-size: 12px;
+  padding: 8px 15px;
+}

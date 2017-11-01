@@ -1,0 +1,114 @@
+
+.slidepanel {
+  position: fixed;
+  top: 45%;
+  width: 295px;
+  padding: 25px 25px 30px;
+  background: $gray-darker;
+  color: $white;
+  text-align: left;
+  @include transition(0.3s ease);
+  @include transition(0.3s cubic-bezier(0.55, 0, 0.1, 1));
+  @include transform(translateX(-295px));
+  @include box-shadow(3px 3px 3px 0 rgba(0, 0, 0, 0.15));
+  z-index: 99;
+  &.active {
+     @include transform(translateX(0px));
+  }
+
+  .tablet &.active, 
+  .mobile &.active {
+    @include transform(translateX(0px));
+  }
+
+  @media (max-width: $screen-md-max) {
+    .tablet &, 
+    .mobile & {
+      width: 315px;
+      @include transform(translateX(-315px));
+    }
+  }
+
+  @media (max-width: $screen-xxs-max) {
+    width: 235px;
+    @include transform(translateX(-235px));
+  }
+
+  &_title + &_cnt {
+    margin-top: 25px;
+  }
+  &_cnt {
+    word-spacing: 6px;
+  }
+
+  &_toggle {
+    background: none;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    outline: none;
+    outline-offset: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background: $gray-darker;
+    color: $brand-primary;
+    font: 400 32px/60px "FontAwesome";
+    @include transition(0.3s all ease);
+    @include box-shadow(3px 3px 3px 0 rgba(0,0,0,0.15));
+    &::-moz-focus-inner {
+      border: none;
+      padding: 0;
+    }
+    &:hover {
+      color: $white;
+    }
+    &:before {
+      content: "\f095";
+    }
+    &.active:before {
+      content: "\f00d";
+    }
+  }
+
+  &_scheme {
+    background: none;
+    border: none;
+    display: inline-block;
+    padding: 0;
+    outline: none;
+    outline-offset: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    @include transition(0.3s all ease);
+    &::-moz-focus-inner {
+      border: none;
+      padding: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), 0%, rgba(255, 255, 255, 0), 100%);
+    }
+    &.active, &:hover {
+      @include transform(scale(0.9));
+    }
+  }
+
+}

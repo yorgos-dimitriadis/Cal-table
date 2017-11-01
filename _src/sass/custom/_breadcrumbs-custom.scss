@@ -1,0 +1,71 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+.breadcrumbs-custom {
+  position: relative;
+  vertical-align: middle;
+
+  a {
+    display: inline;
+    vertical-align: middle;
+    &, &:active, &:focus {
+      color: $brand-primary-lighter;
+    }
+  }
+  &.dark a {
+    &, &:active, &:focus {
+      color: $gray-darkest;
+    }
+  }
+
+  li {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 36px;
+    font-size: 18px;
+  }
+
+  li:after {
+    content: $breadcrumb-separator;
+    position: absolute;
+    top: 53%;
+    right: 9px;
+    display: inline-block;
+    color: rgba($white, .5);
+    font: 400 18px/18px 'Material Design Icons';
+    @include transform(translateY(-50%));
+  }
+  &.dark li:after {
+    color: $gray-darker;
+  }
+
+  li:last-child {
+    padding-right: 0;
+    &:after {
+      display: none;
+    }
+  }
+
+  a:hover,
+  li.active {
+    color: $breadcrumb-active-color;
+  }
+  &.dark a:hover,
+  &.dark li.active {
+    color: $brand-primary-lighter;
+  }
+
+}
+
+@media (min-width: $screen-sm-min) {
+  .breadcrumbs-custom {
+    li {
+      padding-right: 44px;
+    }
+
+    li:after {
+      right: 13px;
+    }
+  }
+}

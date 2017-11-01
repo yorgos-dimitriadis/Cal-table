@@ -1,0 +1,105 @@
+@import "variables";
+// Toolkit @import OFF - compiled CSS is served via separate stylesheets to avoid the IE<10 selector limit(~4095)
+//@import "toolkit";
+
+@import "bootstrap/mixins";
+@import "custom/mixins-custom";
+
+$scheme: nth($schemes, 2);
+
+/*========================================================
+                      Main Styles override
+=========================================================* /
+body {
+    color: map-get($scheme, primary);
+    font: 300 16px/22px $default-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+
+}
+
+h2 {
+  color: map-get($scheme, default);
+}
+h3 {
+  color: map-get($scheme, default);
+  a {
+      color: map-get($scheme, contrast);
+      &:hover {
+        color: map-get($scheme, default);
+      }
+  }
+}
+
+*/
+
+.page {
+
+  .title-overlay--mult {
+    //background-color: map-get($scheme, secondary);
+    //background-repeat: repeat;
+    //background-image: url(../images/lightblue--mult.jpg);
+    @include background-rgba(map-get($scheme, secondary), 0.45);
+    background-blend-mode: multiply;
+  }
+
+  @include text-emphasis-variant('.text-primary', map-get($scheme, secondary));
+
+  // @param1 = font color
+  // @param2 = bg color
+  // @param3 = border color
+  // @param4 = font color hover
+  // @param5 = bg color hover
+  // @param6 = border color hover
+  .btn-default {
+    @include button-variant-custom($gray-base, transparent, map-get($scheme, secondary), $white, $gray-base, $gray-base);
+  }
+  .btn-primary {
+    @include button-variant-custom(map-get($scheme, contrast), map-get($scheme, default), map-get($scheme, default), map-get($scheme, default), map-get($scheme, contrast), map-get($scheme, deafult));
+  }
+
+
+  .offer-block {
+    color: map-get($scheme, default);
+    background-color: map-get($scheme, secondary);
+    h5:before {
+      border-top-color: map-get($scheme, default)
+    }
+    @media (min-width: $screen-md-min) {
+      &:not(.no-triangle):before {
+        @include triangle(top,64px,55px,map-get($scheme, secondary));
+      }
+      &.right-triangle:not(.no-triangle):before {
+        @include triangle(top,64px,55px,map-get($scheme, secondary));
+      }    
+    }
+
+  }
+
+
+  /* Arrows */
+  .slick-prev,
+  .slick-next {
+    background: transparent;
+    &:hover {
+      outline: none;
+      background: transparent;
+      &:before {
+        color: map-get($scheme, contrast);
+        background: map-get($scheme, secondary);
+        border-color: map-get($scheme, secondary);
+      }
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+

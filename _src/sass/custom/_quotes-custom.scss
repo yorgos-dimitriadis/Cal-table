@@ -1,0 +1,178 @@
+//
+// Quotes custom
+// --------------------------------------------------
+
+// Blockquotes
+blockquote {
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  q {
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  cite {
+    font-style: normal;
+  }
+
+  small,
+  .small {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// default
+//------------------------------
+.quote-default {
+  p {
+    @media (min-width: $screen-xs-min) {
+      text-align: left;
+    }
+  }
+
+  cite {
+    font-weight: 700;
+    font-size: 18px;
+  }
+
+  .quote-body {
+    position: relative;
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    .swiper-slide &,
+    .bg-video & {
+      color: $white;
+      border-top: 0 none !important;
+    }
+    @media (min-width: $screen-xs-min) {
+      padding-left: 25px;
+    }
+
+    .unit {
+      position: relative;
+      padding-top: 32px;
+      padding-bottom: 27px;
+      background-color: $body-bg;
+      .swiper-slide &, .bg-video & {
+        background-color: transparent;
+      }
+    }
+
+    svg {
+      margin-top: 6px;
+      fill: $brand-primary;
+    }
+
+    &:before{
+      position: absolute;
+      top: calc(100% - 15px);
+      left: 80px;
+      content: "";
+      @include triangle(right,19px,30px,$gray-lighter)
+    }
+     &:after{
+       left: 81px;
+       position: absolute;
+       top: calc(100% - 17px);
+       content: "";
+       @include triangle(right,20px,30px,$white)
+     }
+     .swiper-slide &:before, .swiper-slide &:after,
+     .bg-video &:before, .bg-video &:after, {
+      display: none;
+     }
+  }
+
+  .quote-footer {
+    text-align: left;
+    padding-left: 25px;
+  }
+
+  // Offsets
+  * + .quote-footer {
+    margin-top: 15px;
+  }
+}
+
+
+//quote modern
+//---------------------------
+
+.quote-modern {
+  max-width: 335px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  .quote-header {
+    @include display-flex;
+    @include align-items(center);
+
+    > div { width: 120%; }
+
+    &:before,
+    &:after {
+      border-color: $gray;
+    }
+  }
+
+  .quote-body{
+    margin-top: 15px;
+    padding: 0 10px 15px;
+    color: $gray-base;
+
+    @media (min-width: $screen-lg-min) {
+      padding-bottom: 30px;
+    }
+
+    * + p {
+      margin-top: 10px;
+    }
+  }
+  
+  .quote-footer{
+    position: relative;
+    padding: 30px 15px 15px;
+    border-top: 1px solid $gray;
+    color: $gray-light;
+    font-weight: 700;
+
+    &:before{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      @include transform(translateX(-50%));
+      content: "";
+      display: inline-block;
+      @include triangle(bottom,36px,20px,$gray);
+    }
+
+     &:after{
+       content: '';
+       position: absolute;
+       top: -1px;
+       left: 50%;
+       @include transform(translateX(-50%));
+       display: inline-block;
+       @include triangle(bottom,36px,20px,$white);
+     }
+  }
+}
+
+//quote classic
+//---------------------------------
+
+.quote-classic {
+  .icon{
+    font-size: 22px;
+  }
+  p + p {
+    margin-top: 25px;
+    margin-bottom: 3px;
+  }
+}

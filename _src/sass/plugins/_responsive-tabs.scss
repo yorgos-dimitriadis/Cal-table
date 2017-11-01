@@ -1,0 +1,697 @@
+/*
+* @subsection   Easy Responsive Tabs
+*
+* @description  Describes style declarations for Easy Responsive Tabs extension
+*
+* @author       Samson Onna
+* @link         samson3d@gmail.com
+* @version      1.0.0
+*/
+
+$tabs-btn-height: 40px;
+$tabs-btn-indent: 0;
+
+$tabs-btn-color: $gray-base;
+$tabs-btn-background: $white;
+
+$tabs-btn-active-color: $white;
+$tabs-btn-active-background: $white;
+
+$tabs-btn-border-radius: 0;
+$tabs-btn-border: 1px solid $gray-lighter;
+
+$tabs-btn-padding: 11px 20px;
+
+$tab-padding: 20px;
+
+$value: 10px;
+
+.resp-tabs-list {
+  li {
+    cursor: pointer;
+    transition: .33s all ease;
+  }
+}
+
+* + .responsive-tabs {
+  margin-top: 35px;
+  @media (min-width: $screen-sm-min) {
+    margin-top: 50px;
+  }
+}
+
+.resp-accordion,
+.resp-tab-content {
+  display: none;
+}
+
+.resp-tab-content-active {
+  display: block;
+}
+
+// Alignment
+.responsive-tabs-horizontal {
+  .resp-tabs-list {
+    word-spacing: 0;
+  }
+}
+
+// Styles
+@media (min-width: $screen-sm-min) {
+  .responsive-tabs-modern {
+    .resp-tabs-list {
+      display: inline-block;
+      > li {
+        font-size: 16px;
+        //color: $half-baked;
+
+        &:hover,
+        &.resp-tab-active {
+          color: $gray-darker;
+        }
+      }
+    }
+
+    &.responsive-tabs-fullwidth {
+      .resp-tabs-list {
+        display: block;
+      }
+    }
+  }
+
+  .responsive-tabs-button {
+    .resp-tabs-list {
+      word-spacing: 0;
+
+      > li {
+        padding: $padding-base-vertical 36px;
+        font: 700 14px/24px $font-family-base;
+        letter-spacing: .075em;
+        color: $gray-light;
+        background-color: transparent;
+        border: 2px solid #e0e1e9;
+        border-radius: 35px;
+        text-align: center  ;
+
+        &:hover,
+        &.resp-tab-active {
+          color: $white;
+          background: $brand-primary;
+          border-color: $brand-primary;
+        }
+      }
+    }
+
+    &.responsive-tabs-button-mod-1 {
+      padding: 0;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .responsive-tabs-horizontal {
+    .resp-tabs-list {
+      margin-top: -$value;
+      > li {
+        display: inline-block;
+        margin-top: $value;
+      }
+    }
+
+    .resp-tab-content {
+      padding: 30px 0 26px;
+    }
+
+    &.responsive-tabs-condensed {
+      .resp-tab-content {
+        padding: 0;
+      }
+    }
+
+    &.responsive-tabs-modern {
+      .resp-tabs-list {
+        border-bottom: 1px solid $gray-lighter;
+
+        > li {
+          position: relative;
+          padding: $padding-base-vertical 36px;
+          font: 700 14px/24px $font-family-base;
+          letter-spacing: .075em;
+          color: $gray-light;
+          background-color: transparent;
+          border: 2px solid #e0e1e9;
+          text-align: left;
+          bottom: -1px;
+          z-index: 10;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-bottom: 1px solid $gray-lighter;
+            opacity: 0;
+            visibility: hidden;
+            transition: .33s all ease;
+          }
+        }
+
+        > li:last-child {
+          margin-right: 0;
+        }
+
+        > li:hover,
+        .resp-tab-active {
+          &:after {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    &.responsive-tabs-button {
+      .resp-tabs-list {
+        > li:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .responsive-tabs-vertical {
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include align-items(flex-start);
+
+    // Common styles
+    .resp-tabs-list {
+      position: relative;
+      @include display-flex;
+      @include flex-direction(column);
+      @include flex-wrap(nowrap);
+      @include align-items(stretch);
+      @include flex-shrink(0);
+
+      > li {
+        z-index: 10;
+        width: 100%;
+        margin: 0;
+        @include flex-grow(1);
+        border: none;
+
+        @media (min-width: $screen-md-min) {
+          min-width: 265px;
+          text-align: left;
+        }
+
+        &:hover,
+        &.resp-tab-active {
+          box-shadow: $shadow-area-ambient;
+        }
+      }
+    }
+
+    .resp-tabs-container {
+      @include flex-grow(1);
+    }
+
+    .resp-tabs-container {
+      padding: 0 30px 3px;
+    }
+
+    .resp-tab-content {
+      padding: 0 0.8rem 3rem;
+    }
+
+    &.responsive-tabs-modern {
+      .resp-tabs-list {
+        border-right: 1px solid $gray-lighter;
+        > li {
+          position: relative;
+          right: -1px;
+          padding: 15px 0 15px 30px;
+          text-align: left;
+          border-right: 1px solid transparent;
+          background-color: transparent;
+
+          &:hover,
+          &.resp-tab-active {
+            border-right-color: $gray-lighter;
+          }
+        }
+
+        > li + li {
+          margin-top: 16px;
+        }
+      }
+    }
+
+    &.responsive-tabs-button {
+      .resp-tabs-list {
+        > li {
+          padding-left: 31px;
+          padding-right: 31px;
+        }
+
+        > li + li {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .responsive-tabs-horizontal.responsive-tabs-modern {
+    .resp-tabs-list {
+      li {
+        margin: $value 44px 0 0;
+        min-width: 125px;
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+
+}
+
+// Accordions styles
+@mixin accordion() {
+  .resp-tabs-list {
+    display: none;
+  }
+
+  .resp-accordion,
+  .resp-tab-content {
+    background: $white;
+  }
+
+  .resp-accordion {
+    position: relative;
+    display: block;
+    padding: 11px 38px 11px 29px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .resp-tab-content {
+    position: relative;
+    margin-top: -1px;
+    will-change: transform;
+  }
+
+  .resp-arrow {
+    position: absolute;
+    transition: .33s;
+    will-change: transform;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background-color: transparent;
+    }
+
+    &:after {
+      opacity: 1;
+      visibility: visible;
+      transition: .2s all ease;
+    }
+  }
+
+  &.responsive-tabs-modern {
+    .resp-accordion {
+      position: relative;
+      padding: 20px 55px 20px 30px;
+      color: $gray-base;
+      border-bottom: 1px solid $gray-lighter;
+      transition: 350ms;
+      border-radius: $border-radius-large;
+      box-shadow: 0 2px 5px rgba($black,.12);
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+
+      &:not(:last-child) {
+
+      }
+
+      &:nth-last-child(2) {
+        transition-delay: .33s;
+
+        &.resp-tab-active {
+          transition: .33s all ease;
+
+        }
+      }
+
+      &:hover {
+        color: $brand-primary;
+      }
+
+      &.resp-tab-active {
+        border-bottom-color: transparent;
+        color: $gray-base;
+      }
+    }
+
+    .resp-tab-content {
+      margin-top: -3px;
+      padding: 28px 55px 22px 30px;
+      border-bottom: 1px solid $gray-lighter;
+      box-shadow: 0 3px 4px rgba($black,.12);
+      border-radius: 0 0 $border-radius-large $border-radius-large;
+      border-top: 1px solid $silver-light;
+    }
+
+    &.responsive-tabs-condensed {
+      .resp-tab-content {
+        padding: 30px 0;
+      }
+    }
+
+    .resp-arrow {
+      top: 0;
+      bottom: -1px;
+      right: 0;
+      width: 50px;
+      background: $brand-primary;
+      border-radius: 0 $border-radius-large $border-radius-large 0;
+      @media (min-width: $screen-lg-min) {
+        width: 70px;
+      }
+
+      &:before,
+      &:after {
+        top: 50%;
+        left: 50%;
+        @include transform(translate(-50%,-50%));
+        background: $white;
+      }
+
+      &:before {
+        width: 20px;
+        height: 2px;
+      }
+
+      &:after {
+        width: 2px;
+        height: 20px;
+      }
+    }
+
+    .resp-tab-active {
+      .resp-arrow {
+        &:after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &.responsive-tabs-modern-mod-1 {
+    .resp-tab-content {
+      padding: 14px 15px 30px 13px;
+    }
+  }
+
+  &.responsive-tabs-button,
+  &.responsive-tabs-horizontal-background {
+    .resp-accordion,
+    .resp-tab-content {
+      color: $gray-base;
+      background: $gray-lighter;
+    }
+
+    &.responsive-tabs-button-mod-1 {
+      .resp-tab-content {
+        padding: 30px 15px 20px;
+        color: $text-color;
+        background: transparent;
+      }
+    }
+
+    .resp-accordion {
+      padding: 14px 10px 11px 59px;
+      border-radius: 6px;
+      font-weight: 700;
+      transition: 1.3s all ease;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+      &.resp-tab-active {
+        border-radius: 6px 6px 0 0;
+        transition: none;
+      }
+    }
+
+    .resp-tab-content {
+      padding: 0 35px 20px 59px;
+      border-radius: 0 0 6px 6px;
+    }
+
+    .resp-arrow {
+      left: 38px;
+      top: 30px;
+
+      &:before,
+      &:after {
+        top: 50%;
+        @include transform(translateY(-50%));
+        background: $gray-base;
+      }
+
+      &:before {
+        width: 18px;
+        height: 4px;
+        right: 0;
+      }
+
+      &:after {
+        width: 4px;
+        height: 18px;
+        right: 7px;
+      }
+    }
+
+    .resp-tab-active {
+      .resp-arrow {
+        &:after {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  .bg-gray-lighter & {
+    &.responsive-tabs-button,
+    &.responsive-tabs-horizontal-background {
+      .resp-accordion,
+      .resp-tab-content {
+        background: $white;
+      }
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .responsive-tabs {
+    @include accordion;
+  }
+}
+
+.responsive-tabs[data-type='accordion'] {
+  @include accordion;
+}
+
+
+.responsive-tabs-horizontal.responsive-tabs-modern-mod-1 {
+
+  ul.resp-tabs-list{
+    border-bottom: 0;
+    li {
+      font-size: 24px;
+      min-width: auto;
+      margin: 10px 0 0 0;
+      padding: 0 13px;
+       &:after{
+         content: none;
+       }
+
+      & + li {
+        &:before{
+          position: absolute;
+          left: -4px;
+          content: "|";
+          display: inline-block;
+          color: #e5e7e9;
+          pointer-events: none;
+        }
+      }
+
+      &.resp-tab-active,
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+  }
+
+}
+
+
+// shop tabs
+//---------------------------------------------
+
+.responsive-tabs-shop {
+
+  .price,
+  .icon,
+  li:before {
+    vertical-align: middle;
+    transition: 350ms;
+  }
+  .price {
+    font-size: 24px;
+    color: #e5e7e9;
+    padding-right: 8px;
+
+    @media (min-width: $screen-lg-min) {
+      font-size: 36px;
+    }
+  }
+
+  .icon {
+    width: 39px;
+    height: 39px;
+    line-height: 38px;
+    background-color: #e5e7e9;
+    color: $text-color;
+    border-color: #e5e7e9;
+    font-size: 14px;
+  }
+
+  li {
+    padding: 0 24px 0 0;
+  }
+
+  li + li {
+    position: relative;
+    margin-left: 24px;
+    &:before{
+      position: absolute;
+      left: -26px;
+      top: 50%;
+      @include transform(translateY(-50%));
+      content: "or";
+      display: inline-block;
+      pointer-events: none;
+    }
+  }
+
+  li.resp-tab-active {
+    .price {
+      font-weight: 700;
+    }
+  }
+  li:hover,
+  li.resp-tab-active,
+  .resp-accordion.resp-tab-active{
+
+    .price {
+      color: $burnt-sienna;
+    }
+    .icon {
+      color: $white;
+      border-color: $brand-primary;
+      background-color: $brand-primary;
+    }
+  }
+
+  // Accordion
+  .resp-accordion {
+    margin-top: -1px;
+    border-top: 1px solid #e5e7e9;
+    border-bottom: 1px solid #e5e7e9;
+  }
+  * + .resp-accordion {
+    margin-top: 10px;
+  }
+}
+
+// tabs background
+//--------------------------------------------
+
+.responsive-tabs.responsive-tabs-horizontal-background {
+  .resp-tabs-list{
+    li {
+      padding: 10px 55px 5px;
+      font-size: 18px;
+      letter-spacing: 0.02em;
+      
+      &.resp-tab-active {
+        font-weight: 700;
+      }
+      &:hover,
+      &.resp-tab-active {
+        color: $gray-base;
+        background-color: $gray-lighter;
+      }
+    }
+  }
+  .resp-tabs-container{
+    @media (min-width: $screen-sm-min) {
+      background-color: $gray-lighter;
+    }
+  }
+  .resp-tab-content{
+    padding: 20px 15px;
+    @media (min-width: $screen-lg-min) {
+      padding: 46px 0 85px;
+      max-width: 1170px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+//tabs with slick
+//-------------------------------------------
+
+.responsive-tabs-carousel {
+  &.responsive-tabs-button {
+    .resp-tabs-list > li {
+      border-color: #e0e1e9;
+
+      &.resp-tab-active,
+      &:hover {
+        border-color: $burnt-sienna;
+        background: transparent;
+        color: $burnt-sienna;
+      }
+    }
+  }
+  &.responsive-tabs-button .resp-tab-content,
+  &.responsive-tabs-horizontal-background .resp-tab-content {
+    @media (max-width: 767px){
+      padding: 0 15px 20px 15px;
+    }
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .resp-tab-content {
+      padding: 50px 0 26px;
+    }
+  }
+}

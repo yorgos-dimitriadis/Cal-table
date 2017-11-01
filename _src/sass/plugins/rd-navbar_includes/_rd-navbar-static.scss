@@ -1,0 +1,68 @@
+/*
+* Static Layout
+*/
+
+$navbar-static-nav-indent: 50px;
+
+$navbar-static-nav-color: $navbar-nav-color;
+$navbar-static-nav-background: $navbar-nav-background;
+$navbar-static-nav-hover-color: $navbar-nav-hover-color;
+$navbar-static-nav-hover-background: $navbar-nav-hover-background;
+$navbar-static-nav-active-color: $navbar-nav-active-color;
+$navbar-static-nav-active-background: $navbar-nav-active-background;
+
+.rd-navbar-static {
+  display: block;
+
+  .rd-navbar-inner {
+    @include display(flex);
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+    height: 98px;
+  }
+
+  .rd-navbar-panel {
+    min-width: 200px;
+    text-align: left;
+  }
+
+  .rd-navbar-nav-wrap {
+    min-width: 770px;
+    text-align: center;
+  }
+
+  .rd-navbar-contact-info {
+    min-width: 200px;
+    text-align: right;
+
+    a[href^='callto'] { line-height: 28px; }
+  }
+
+  .rd-navbar-nav {
+    margin-left: -$navbar-static-nav-indent;
+    height: 27px;
+
+    > li {
+      display: inline-block;
+      margin-left: 15px;
+      @media (min-width: $screen-xl-min) {
+        margin-left: $navbar-static-nav-indent;
+      }
+    }
+  }
+
+  // RD Navbar States
+  .rd-navbar-static--visible {
+    display: block;
+  }
+
+  .rd-navbar-static--hidden {
+    display: none;
+  }
+
+  &.rd-navbar--is-clone {
+    .rd-navbar-brand { height: 30px; }
+  }
+}
+

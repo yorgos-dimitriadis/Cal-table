@@ -1,0 +1,259 @@
+//
+// ProgressBar.js
+// --------------------------------------------------
+
+.progress-bar-wrap{
+  max-width: 100%;
+  width: 210px;
+
+  @media (min-width: $screen-xs-min) and (max-width: $screen-sm-min - 1) {
+    max-width: 120px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    max-width: 150px;
+  }
+}
+
+
+
+.progress-bar-js {
+  position: relative;
+  width: 100%;
+  margin: 17px 0 30px;
+
+  .progress-bar__body {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    top: 50%;
+    right: 50%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 26px;
+
+    &:after{
+      content: '%';
+    }
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail{
+    stroke-linejoin: round;
+  }
+}
+
+.progress-bar-horizontal{
+  width: 90%;
+  text-align: left;
+  background: #f5f5f5;
+  border-radius: 6px;
+  color: $text-color;
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,.15);
+  > svg{
+    margin-top: 0;
+    border-radius: 6px;
+    path{
+      stroke-width: 5;
+    }
+  }
+
+  .progress-bar__body{
+    width: auto!important;
+    top: -9px;
+    right: -35px;
+    font-weight: 700;
+    @media (min-width: $screen-lg-min) {
+      right: -50px;
+    }
+  }
+}
+
+.progress-bar-radial{
+  position: relative;
+  padding-bottom: 100%;
+
+  > svg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .progress-bar__stroke,
+  .progress-bar__trail{
+    //stroke-location: outside;
+  }
+
+  .progress-bar__body{
+    font-size: 43px;
+    font-weight: 400;
+    color: $gray-dark;
+    @include transform(translate(50%, -50%));
+     &:after{
+       content: '%';
+     }
+  }
+  &.progress-bar-default .progress-bar__stroke{
+    stroke: $brand-primary;
+  }
+}
+
+.progress-bar-radial-wrap {
+  position: relative;
+  @media (min-width: $screen-lg-min) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  > p{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    @include transform(translateX(-50%));
+  }
+}
+
+.progress-bar-default {
+  .progress-bar__stroke{
+    stroke: $brand-primary;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($brand-primary,1);
+  }
+}
+
+.progress-bar-default-1 {
+  .progress-bar__stroke{
+    stroke: $brand-primary;
+  }
+
+  .progress-bar__trail{
+    stroke: #f5f5f5;
+  }
+}
+
+.progress-bar-primary {
+  .progress-bar__stroke{
+    stroke: $brand-primary;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($gray, 0.05);
+  }
+}
+
+.progress-bar-burnt-sienna {
+  .progress-bar__stroke{
+    stroke: $burnt-sienna;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($gray, 0.05);
+  }
+}
+
+
+.progress-bar-silver-tree {
+  .progress-bar__stroke{
+    stroke: $silver-tree;
+  }
+
+  .progress-bar__trail{
+    stroke: rgba($gray, 0.05);
+  }
+}
+
+
+.progress-bar-wrapper {
+
+  @media (min-width: $screen-md-min) {
+    max-width: 150px;
+    margin: 0 auto;
+  }
+}
+
+
+.progress-container {
+  .progress-bar {
+    position: relative;
+    margin: 4px 0;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  p {
+    display: block;
+    margin-bottom: 0;
+  }
+  > p {
+    max-width: 230px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  *:nth-last-child(1){
+    margin-bottom: 0;
+  }
+}
+
+
+
+//
+// Custom Progress Bars
+// --------------------------------------------------
+
+
+// Linear Progress Bars
+// --------------------------------------------------
+
+.progress-linear {
+  position: relative;
+  margin-bottom: 25px;
+
+  .progress-bar-linear-wrap, .progress-bar-linear {
+    height: 100%;
+    border-radius: 10px;
+  }
+
+  .progress-header {
+    letter-spacing: 0.05em;
+  }
+
+  .progress-bar-linear-wrap {
+    position: relative;
+    border-radius: 10px;
+    background-color: transparent;
+    border:1px solid #e5e7e9;
+    height: 25px;
+  }
+
+  .progress-bar-linear {
+    width: 0;
+    @include transition(.5s all ease);
+  }
+
+  .progress-text,
+  .progress-value{
+    position: absolute;
+    top: -1px;
+    font-weight: 700;
+  }
+  .progress-value{
+    color: $white;
+    left: 17px;
+    &:after{
+      content:"%";
+    }
+  }
+  .progress-text{
+    right: 17px;
+    color: $gray-base;
+  }
+}

@@ -1,0 +1,108 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label {
+  padding: $label-padding;
+}
+
+// Labels styles
+// --------------------------------------------------
+
+.label-custom {
+  display: inline-block;
+  padding: $label-custom-padding;
+  font-size: $label-custom-size;
+  font-weight: $label-custom-weight;
+  line-height: $label-custom-line-height;
+  text-align: center;
+  font-style: italic;
+  white-space: nowrap;
+  transition: .3s;
+
+  h1 &, h2 &, h3 &, h4 &, h5 &, h6 &, p &{
+    margin-left: $label-custom-title-offset-left;
+  }
+
+  &,&:hover,&:focus{
+    color: $label-custom-hover;
+  }
+}
+
+.label-ellipsis-custom {
+  border-radius: $label-ellipsis-custom-border-radius;
+}
+
+.label-rounded-custom {
+  border-radius: $label-rounded-custom;
+}
+
+// Labels sizes
+// --------------------------------------------------
+
+.label-xs-custom {
+  padding: $label-xs-custom-padding;
+}
+
+.label-sm-custom {
+  padding: $label-sm-custom-padding;
+  font-size: 14px;
+}
+
+.label-md-custom{
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-style: normal;
+}
+
+.label-lg-custom {
+  font-size: $label-lg-custom-size;
+  padding: $label-lg-custom-padding;
+}
+
+.label-xl-custom {
+  font-size: $label-xl-custom-size;
+  padding: $label-xl-custom-padding;
+}
+
+
+// Labels colors
+// --------------------------------------------------
+
+.label-default {
+  @include label-variant($label-default-bg);
+}
+
+.label-primary {
+  @include label-variant($label-primary-bg);
+}
+
+// label price
+//---------------------------------------------------
+
+.label-price {
+  max-width: 245px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h1{
+    font-size: 95px;
+    &:before{
+      content: "$";
+      display: inline-block;
+      font-size: 36px;
+      vertical-align: super;
+    }
+  }
+  .h3{
+    font-size: 55px;
+  }
+
+  .ie-10 &,
+  .ie-11 & {
+    h1 sup{
+      vertical-align: middle;
+    }
+  }
+}

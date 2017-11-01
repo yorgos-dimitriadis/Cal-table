@@ -1,0 +1,83 @@
+/*
+* @subsection   RD Google Map
+*
+* @description  Describes style declarations for RD Google Map extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.0.0
+*/
+$map-height: 200px;
+$map-xs-height: 250px;
+$map-sm-height: 505px;
+
+.rd-google-map__model {
+    color: #333;
+    height: $map-xs-height;
+
+    img {
+      max-width: none !important;
+    }
+
+    @media (min-width: $screen-xs-min) {
+      height: $map-xs-height;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: $map-sm-height;
+    }
+
+  p{
+    max-width: 150px;
+  }
+}
+
+.map_locations {
+  display: none;
+}
+
+
+.gm-wrapper > div > div {
+  background-color:$brand-primary;
+
+  .iw-content{
+    font-size: 14px;
+    color: $white;
+    @include display-flex;
+    @include align-items(center);
+    .icon {
+      display: block;
+    }
+    @media(min-width: 1199px){
+      height: 150px;
+    }
+  }
+  & > div:nth-child(1){
+    display: none;
+  }
+  & > div:nth-child(3){
+    display: none;
+  }
+  div:nth-child(4){
+    background-color: transparent !important;
+    width: 155px!important;
+    height: 155px!important;
+    border-radius: 50% !important;
+  }
+  div:nth-child(2){
+      width: 210px!important;
+      height: 210px!important;
+      border-radius: 50% !important;
+  }
+}
+
+.gm-style-iw {
+  background-color: rgba($gray-base,.35) !important;
+  width: 155px!important;
+  height: 155px!important;
+  border-radius: 50% !important;
+  top: 27px !important;
+  left: 26px !important;
+  @include display-flex;
+  @include align-items(center);
+}

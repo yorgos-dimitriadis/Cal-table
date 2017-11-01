@@ -1,0 +1,73 @@
+//
+// Offsets
+// --------------------------------------------------
+
+
+// Insets
+// -------------------------
+
+$insets: (0, 10px,15px,20px,30px,45px,50px,70px,80px);
+
+@include indent-responsive(inset, left, padding-left, $medias, $insets);
+@include indent-responsive(inset, right, padding-right, $medias, $insets);
+
+
+// Elements
+// -------------------------
+.page {
+  
+  * + p {
+    margin-top: 12px;
+  }
+
+  h2 + p {
+    margin-top: 15px;
+  }
+  h3 + p,
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    margin-top: 20px;
+  }
+
+  img + h1 ,
+  img + h2 ,
+  img + h3 ,
+  img + h4 ,
+  img + h5 ,
+  img + h6  {
+    margin-top: 28px;
+    @media (min-width: $screen-md-min) {
+      margin-top: 35px;
+    }
+  }
+
+}
+
+.bg-white {
+  & + .bg-white {
+    padding-top: 0;
+  }
+}
+
+
+
+// Grid
+// -------------------------
+.row-no-gutter {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+// Sections
+// -------------------------
+
+
+// Responsive
+// -------------------------
+
+$offsets: (0, 5px, 10px,15px,20px,25px,30px,35px,40px,45px,50px,60px,65px,70px,80px,85px,90px,100px);
+
+html .page {
+  @include indent-responsive(offset, top, margin-top, $medias, $offsets);
+}

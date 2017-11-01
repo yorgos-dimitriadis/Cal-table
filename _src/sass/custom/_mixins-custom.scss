@@ -1,0 +1,81 @@
+// Custom Mixins
+// --------------------------------------------------
+
+// Utilities
+@import "mixins/functions";
+@import "mixins/flex";
+@import "mixins/vendors-custom";
+@import "mixins/text-utilities";
+@import "mixins/pull-utilities";
+@import "mixins/visibility-utilities";
+@import "mixins/backgrounds";
+@import "mixins/indent-utilities";
+@import "mixins/unit-utilities";
+@import "mixins/element-groups";
+@import "mixins/buttons";
+@import "mixins/forms-custom";
+@import "mixins/links";
+@import "mixins/icons";
+@import "mixins/triangle";
+
+// Grid Framework
+@import "mixins/flex-grid-framework";
+
+
+// center vertically and/or horizontally an absolute positioned element
+@mixin center-abs($xy:xy) {
+  @if $xy == xy {
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    @include transform(translateX(-50%) translateY(-50%));
+  }
+  @else if $xy == x {
+    left: 50%;
+    right: auto;
+    @include transform(translateX(-50%));
+  }
+  @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+    @include transform(translateY(-50%));
+  }
+}
+
+
+// Opacity
+@mixin opacity($opacity) {
+  opacity: $opacity;
+
+  .lt-ie9 & {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity})";
+    filter: alpha(opacity=$opacity*100);
+  }
+}
+
+// Background-rgba
+@mixin background-rgba($rgb, $opacity) {
+  background: rgba($rgb, $opacity);
+
+  .lt-ie9 & {
+    background: none;
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str(rgba($rgb, $opacity))}', endColorstr='#{ie-hex-str(rgba($rgb, $opacity))}')";
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str(rgba($rgb, $opacity))}', endColorstr='#{ie-hex-str(rgba($rgb, $opacity))}');
+    zoom: 1;
+  }
+}
+
+// Heading
+@mixin heading() {
+  h1, h2, h3, h4, h5, h6 {
+    @content
+  }
+}
+@mixin heading-to($from:1, $to:6) {
+  @for $i from $from through $to {
+    h#{$i} {
+      @content
+    }
+  }
+}

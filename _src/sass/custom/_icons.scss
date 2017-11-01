@@ -1,0 +1,280 @@
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display: inline-block;
+  text-align: center;
+  &:before {
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+[class*='icon-circle'] {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+// Alternate icons
+// --------------------------------------------------
+
+.icon-default {
+  color: $text-color;
+}
+
+.icon-primary {
+  color: $brand-primary;
+}
+
+.icon-silver {
+  color: $silver;
+
+  &.icon-circle {
+    background-color: $silver;
+    color: $white;
+  }
+
+  &:hover{
+    color: $brand-primary;
+  }
+  &.icon-circle:hover {
+    background-color: $brand-primary;
+    color: $white;
+  }
+}
+
+span.icon-white {
+  color: $white;
+}
+
+.icon-facebook {
+  color: $chambray;
+  &.icon-circle {
+    border-color: $chambray;
+  }
+}
+
+.icon-twitter {
+  color: $curious-blue;
+  &.icon-circle {
+    border-color: $curious-blue;
+  }
+}
+
+.icon-google {
+  color: $flame-pea;
+  &.icon-circle {
+    border-color: $flame-pea;
+  }
+}
+
+a {
+
+  &,
+  &:active,
+  &:focus {
+    > .icon-default {
+      color: $text-color;
+    }
+
+    > .icon-primary {
+      color: $brand-primary;
+    }
+
+    > .icon-burnt-sienna {
+      color: $burnt-sienna;
+    }
+
+    > .icon-facebook {
+      color: $chambray;
+      &.icon-circle {
+        border-color: $chambray;
+      }
+    }
+
+    > .icon-twitter {
+      color: $curious-blue;
+      &.icon-circle {
+        border-color: $curious-blue;
+      }
+    }
+
+    > .icon-google {
+      color: $flame-pea;
+      &.icon-circle {
+        border-color: $flame-pea;
+      }
+    }
+  }
+
+  &:hover {
+    > .icon-default {
+      color: $gray-darker;
+    }
+
+    > .icon-primary {
+      color: $brand-primary;
+    }
+
+    > .icon-facebook {
+      &.icon-circle {
+        color: $white;
+        background: $chambray;
+        border-color: $chambray;
+      }
+    }
+
+    > .icon-twitter {
+      &.icon-circle {
+        color: $white;
+        background: $curious-blue;
+        border-color: $curious-blue;
+      }
+    }
+
+    > .icon-google {
+      &.icon-circle {
+        color: $white;
+        background: $flame-pea;
+        border-color: $flame-pea;
+      }
+    }
+  }
+}
+
+// Icon Sizes
+// --------------------------------------------------
+
+.page {
+  .icon-xxs {
+    @include icon-sizing(19px);
+
+    &-mod-1{
+      @include icon-sizing(15px);
+    }
+  }
+
+  .icon-xs {
+    @include icon-sizing(20px);
+
+    &.icon-circle {
+      width: 41px;
+      height: 41px;
+      line-height: 38px;
+    }
+  }
+
+  .icon-sm {
+    @include icon-sizing(25px);
+
+    &.icon-circle {
+      width: 41px;
+      height: 41px;
+      line-height: 38px;
+    }
+
+    &-mod-1{
+      @include icon-sizing(28px);
+    }
+  }
+
+  .icon-md {
+    @include icon-sizing(33px);
+
+    &-mod-1{
+      @include icon-sizing(30px);
+    }
+  }
+
+  .icon-lg {
+    @include icon-sizing(50px);
+  }
+
+  .icon-xl {
+    @include icon-sizing(80px);
+  }
+
+  .icon-xxl {
+    @include icon-sizing(88px);
+  }
+
+  .icon-social {
+
+    &.icon-circle {
+      width: 44px;
+      height: 44px;
+      line-height: 40px;
+    }
+  }
+}
+
+// Icon modifiers
+// --------------------------------------------------
+.icon-xxs {
+  &.icon-circle {
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+
+    &.icon-burnt-sienna {
+      color: $white;
+      background-color: $burnt-sienna;
+      box-shadow: 0 0 0 4px rgba(#ec5353,.49);
+      border: 0;
+    }
+  }
+}
+
+// Icon adjuster
+.icon-adjust-vertical {
+  .icon {
+    position: relative;
+    top: -2px;
+  }
+}
+
+// box icon
+//----------------------------------------------------
+
+.box-icon {
+  max-width: 278px;
+  margin: 0 auto;
+  * + .box-icon-header {
+    margin-top: 11px;
+  }
+  hr {
+    margin-top: 17px;
+    margin-bottom: 16px;
+  }
+}
+
+.box-icon-variant-1{
+  @media (min-width: $screen-sm-min) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  h5{
+    font-size: 16px;
+  }
+
+  .icon-xl {
+    height: 91px;
+    line-height: 92px;
+  }
+}
+
+//icon circle
+
+.icon-circle {
+  border-radius: 50%;
+  border: 1px solid;
+}
