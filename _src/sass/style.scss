@@ -354,6 +354,13 @@ $scheme: nth($schemes, 1);
         .popover {
           color: $gray-base;
         }
+        &.red {
+          background-color: #ff1d23;
+        }
+        &.red-green {
+          background-color: transparent;
+          background-image: url('../images/red-green_bg.gif');
+        }
       }
       .side-caption {
         background-color: transparent;

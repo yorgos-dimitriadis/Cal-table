@@ -38,7 +38,7 @@
                 	<tr>
                 		<th class="side-caption" width="180" align="center" valign="middle">
                     
-                        </th>
+                    </th>
                 		<th width="26" height="28" align="center" valign="middle">1</th>
                 		<th width="26" height="28" align="center" valign="middle">2</th>
                 		<th width="26" height="28" align="center" valign="middle">3</th>
@@ -73,20 +73,26 @@
                 	</tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    	<td colspan="32" class="hor-line top"><hr></td>
-                    </tr>
+                  <tr>
+                    <td colspan="32" class="hor-line top"><hr></td>
+                  </tr>
                 	<tr style="padding-top:5px;">
                 		<td class="side-caption" width="180" align="center" valign="middle">
-                            Car 1
-                        </td>
-                        <td width="26" height="28" align="center" valign="middle">
-                            <div class="info-box" data-toggle="popover" data-html="true" data-placement="right" data-content="User 1 1:00 - 1:00 | Αρ. 0001<br>User 2 1:00 - 1:00 | Αρ. 0002<br>User 3 1:00 - 1:00 | Αρ. 0003<br>User 4 1:00 - 1:00 | Αρ. 0004<br>User 5 1:00 - 1:00 | Αρ. 0005<br>User 6 1:00 - 1:00 | Αρ. 0006<br>User 7 1:00 - 1:00 | Αρ. 0007<br>User 8 1:00 - 1:00 | Αρ. 0008<br>User 9 1:00 - 1:00 | Αρ. 0009<br>"></div>
-                        </td>
+                      Car 1
+                    </td>
+                    <!-- 
+                      colspan => reservation days & width => res. days * cell width ( 26px ) 
+                      + 1 half reservation day => red-green
+                    -->
+                    <td colspan="4" width="104" height="28" align="center" valign="middle" class="red">
+                        <div class="info-box" data-toggle="popover" data-html="true" data-placement="right" data-content="User 1 1:00 - 1:00 | Αρ. 0001<br>User 2 1:00 - 1:00 | Αρ. 0002<br>User 3 1:00 - 1:00 | Αρ. 0003<br>User 4 1:00 - 1:00 | Αρ. 0004<br>User 5 1:00 - 1:00 | Αρ. 0005<br>User 6 1:00 - 1:00 | Αρ. 0006<br>User 7 1:00 - 1:00 | Αρ. 0007<br>User 8 1:00 - 1:00 | Αρ. 0008<br>User 9 1:00 - 1:00 | Αρ. 0009<br>"></div>
+                    </td>
+                    <!-- - ->
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
-                		<td width="26" height="28" align="center" valign="middle"></td>
+                		<!-- -->
+                		<td width="26" height="28" align="center" valign="middle" class="red-green"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
@@ -121,8 +127,8 @@
 
                 	<tr style="padding-top:5px;">
                 		<td class="side-caption" width="180" align="center" valign="middle">
-                            Car 2
-                        </td>
+                        Car 2
+                    </td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
                 		<td width="26" height="28" align="center" valign="middle"></td>
@@ -157,9 +163,9 @@
                 	</tr>
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <td colspan="32" class="hor-line bottom"><hr></td>
-                    </tr>
+                  <tr>
+                    <td colspan="32" class="hor-line bottom"><hr></td>
+                  </tr>
                 </tfoot>
               </table> 
             </div>
