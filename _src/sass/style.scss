@@ -343,7 +343,7 @@ $scheme: nth($schemes, 1);
     tbody {
       td {
         padding: 0 3px 0 3px;
-        background-color: #80b565;
+        background-color: #2ed95b;
         color: #fff;
         .info-box {
           position: relative;
@@ -357,22 +357,21 @@ $scheme: nth($schemes, 1);
         &.red {
           background-color: #ff1d23;
         }
-        &.red-green {
+        &.black-dot {
+          background-image: url('../images/black-dot.png');
+        } 
+        &.red-black-dot {
           background-color: transparent;
-          background-image: url('../images/red-green_bg.gif');
-        }
-        &.red-green {
-          background-color: transparent;
-          background-image: url('../images/red-green_bg.gif');
-        }
+          background-image: url('../images/red-black-dot.gif');
+        } 
         &.red-white-green {
           background-color: transparent;
-          background-image: url('../images/red-white-green_bg.gif');
+          background-image: url('../images/red-white-green.gif');
         }
-        &.red-black {
+        &.green-white-red {
           background-color: transparent;
-          background-image: url('../images/red-black_bg.gif');
-        } 
+          background-image: url('../images/green-white-red.gif');
+        }
       }
       .side-caption {
         background-color: transparent;

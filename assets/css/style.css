@@ -332,7 +332,7 @@
     /* line 344, ../../_src/sass/style.scss */
     .cal-table-wrapper table tbody td {
       padding: 0 3px 0 3px;
-      background-color: #80b565;
+      background-color: #2ed95b;
       color: #fff; }
       /* line 348, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td .info-box {
@@ -347,30 +347,29 @@
       .cal-table-wrapper table tbody td.red {
         background-color: #ff1d23; }
       /* line 360, ../../_src/sass/style.scss */
-      .cal-table-wrapper table tbody td.red-green {
+      .cal-table-wrapper table tbody td.black-dot {
+        background-image: url("../images/black-dot.png"); }
+      /* line 363, ../../_src/sass/style.scss */
+      .cal-table-wrapper table tbody td.red-black-dot {
         background-color: transparent;
-        background-image: url("../images/red-green_bg.gif"); }
-      /* line 364, ../../_src/sass/style.scss */
-      .cal-table-wrapper table tbody td.red-green {
-        background-color: transparent;
-        background-image: url("../images/red-green_bg.gif"); }
-      /* line 368, ../../_src/sass/style.scss */
+        background-image: url("../images/red-black-dot.gif"); }
+      /* line 367, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red-white-green {
         background-color: transparent;
-        background-image: url("../images/red-white-green_bg.gif"); }
-      /* line 372, ../../_src/sass/style.scss */
-      .cal-table-wrapper table tbody td.red-black {
+        background-image: url("../images/red-white-green.gif"); }
+      /* line 371, ../../_src/sass/style.scss */
+      .cal-table-wrapper table tbody td.green-white-red {
         background-color: transparent;
-        background-image: url("../images/red-black_bg.gif"); }
-    /* line 377, ../../_src/sass/style.scss */
+        background-image: url("../images/green-white-red.gif"); }
+    /* line 376, ../../_src/sass/style.scss */
     .cal-table-wrapper table tbody .side-caption {
       background-color: transparent;
       color: #2b2c2f;
       font-size: 14px; }
-    /* line 382, ../../_src/sass/style.scss */
+    /* line 381, ../../_src/sass/style.scss */
     .cal-table-wrapper table tbody .hor-line {
       background-color: transparent; }
-      /* line 385, ../../_src/sass/style.scss */
+      /* line 384, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody .hor-line.top hr {
         margin-top: 10px;
         margin-bottom: 10px; }
