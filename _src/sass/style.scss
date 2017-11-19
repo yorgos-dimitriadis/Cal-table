@@ -376,7 +376,11 @@ $scheme: nth($schemes, 1);
         &.red-black-dot {
           background-color: transparent;
           background-image: url('../images/red-black-dot.gif');
-        } 
+        }
+        &.red-white-red {
+          background-color: transparent;
+          background-image: url('../images/red-white-red.gif');
+        }
         &.red-white-green {
           background-color: transparent;
           background-image: url('../images/red-white-green.gif');
