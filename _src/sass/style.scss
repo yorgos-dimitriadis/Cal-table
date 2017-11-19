@@ -331,17 +331,29 @@ $scheme: nth($schemes, 1);
     border-color: #fff;
     thead {
       th {
+        text-align: center;
+        vertical-align: middle;
+        width: 26px;
+        height: 28px;
         padding: 0 3px 0 3px;
         background-color: #197c99;
         color: #fff;
         text-align: center;
       }
       .side-caption {
+        text-align: center;
+        vertical-align: middle;
+        width: 180px;
+        height: auto;
         background-color: transparent;
       }
     }
     tbody {
       td {
+        text-align: center;
+        vertical-align: middle;
+        width: 26px;
+        height: 28px;
         padding: 0 3px 0 3px;
         background-color: #2ed95b;
         color: #fff;
@@ -353,6 +365,7 @@ $scheme: nth($schemes, 1);
         }
         .popover {
           color: $gray-base;
+          line-height: 1.45;
         }
         &.red {
           background-color: #ff1d23;
@@ -374,6 +387,10 @@ $scheme: nth($schemes, 1);
         }
       }
       .side-caption {
+        text-align: center;
+        vertical-align: middle;
+        width: 180px;
+        height: auto;
         background-color: transparent;
         color: $gray-base;
         font-size: 14px;
