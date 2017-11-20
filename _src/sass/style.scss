@@ -339,11 +339,17 @@ $scheme: nth($schemes, 1);
         background-color: #197c99;
         color: #fff;
         text-align: center;
+        .dropdown {
+          .btn {
+            line-height: 0.8;
+            border-radius: 0;
+          }
+        }
       }
       .side-caption {
         text-align: center;
         vertical-align: middle;
-        width: 180px;
+        width: 280px;
         height: auto;
         background-color: transparent;
       }
@@ -393,7 +399,7 @@ $scheme: nth($schemes, 1);
       .side-caption {
         text-align: center;
         vertical-align: middle;
-        width: 180px;
+        width: 280px;
         height: auto;
         background-color: transparent;
         color: $gray-base;
