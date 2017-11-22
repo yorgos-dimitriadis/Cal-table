@@ -1,3 +1,9 @@
+main, #main, .main {
+  height: 100vh; }
+
+section {
+  height: 100%; }
+
 .relative {
   position: relative; }
 
@@ -255,20 +261,47 @@
 /*
  * Misc
  */
+.container-fluid, .row, [class*="col-"] {
+  height: 100%; }
+
 .cal-table-wrapper {
+  height: 100%;
   overflow-x: auto; }
+  .cal-table-wrapper .arrows {
+    width: 1086px;
+    overflow: auto; }
+    .cal-table-wrapper .arrows h1, .cal-table-wrapper .arrows h2, .cal-table-wrapper .arrows h3, .cal-table-wrapper .arrows h4, .cal-table-wrapper .arrows h5, .cal-table-wrapper .arrows h6 {
+      margin: 0; }
   .cal-table-wrapper table {
     border-color: #fff; }
     .cal-table-wrapper table thead th {
+      text-align: center;
+      vertical-align: middle;
+      width: 26px;
+      height: 28px;
       padding: 0 3px 0 3px;
       background-color: #197c99;
       color: #fff;
       text-align: center; }
+      .cal-table-wrapper table thead th .dropdown {
+        display: inline-block; }
+        .cal-table-wrapper table thead th .dropdown .btn {
+          line-height: 0.8;
+          border-radius: 0;
+          padding: 8px 15px; }
     .cal-table-wrapper table thead .side-caption {
+      text-align: center;
+      vertical-align: middle;
+      width: 280px;
+      height: auto;
       background-color: transparent; }
     .cal-table-wrapper table tbody td {
+      text-align: center;
+      vertical-align: middle;
+      width: 26px;
+      height: 28px;
       padding: 0 3px 0 3px;
-      background-color: #80b565;
+      background-color: #2ed95b;
       color: #fff; }
       .cal-table-wrapper table tbody td .info-box {
         position: relative;
@@ -276,22 +309,34 @@
         width: 100%;
         height: 100%; }
       .cal-table-wrapper table tbody td .popover {
-        color: #2b2c2f; }
+        color: #2b2c2f;
+        line-height: 1.45; }
+      .cal-table-wrapper table tbody td.status {
+        cursor: pointer; }
       .cal-table-wrapper table tbody td.red {
         background-color: #ff1d23; }
-      .cal-table-wrapper table tbody td.red-green {
+      .cal-table-wrapper table tbody td.black-dot {
+        background-image: url("../images/black-dot.png"); }
+      .cal-table-wrapper table tbody td.red-black-dot {
         background-color: transparent;
-        background-image: url("../images/red-green_bg.gif"); }
-      .cal-table-wrapper table tbody td.red-green {
+        background-image: url("../images/red-black-dot.gif"); }
+      .cal-table-wrapper table tbody td.red-white-red {
         background-color: transparent;
-        background-image: url("../images/red-green_bg.gif"); }
+        background-image: url("../images/red-white-red.gif"); }
+      .cal-table-wrapper table tbody td.red-white-red-blackdot {
+        background-color: transparent;
+        background-image: url("../images/red-white-red-blackdot.gif"); }
       .cal-table-wrapper table tbody td.red-white-green {
         background-color: transparent;
-        background-image: url("../images/red-white-green_bg.gif"); }
-      .cal-table-wrapper table tbody td.red-black {
+        background-image: url("../images/red-white-green.gif"); }
+      .cal-table-wrapper table tbody td.green-white-red {
         background-color: transparent;
-        background-image: url("../images/red-black_bg.gif"); }
+        background-image: url("../images/green-white-red.gif"); }
     .cal-table-wrapper table tbody .side-caption {
+      text-align: center;
+      vertical-align: middle;
+      width: 280px;
+      height: auto;
       background-color: transparent;
       color: #2b2c2f;
       font-size: 14px; }

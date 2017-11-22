@@ -12,6 +12,13 @@
 
 $scheme: nth($schemes, 1);
 
+main, #main, .main {
+  height: 100vh;
+}
+
+section {
+  height: 100%;
+}
 
 .relative {
   position: relative;
@@ -325,8 +332,20 @@ $scheme: nth($schemes, 1);
  * Misc
  */
 
+.container-fluid, .row, [class*="col-"] {
+  height: 100%;
+}
+
 .cal-table-wrapper {
+  height: 100%;
   overflow-x: auto;
+  .arrows {
+    width: 1086px;
+    overflow: auto;
+    @include heading() {
+      margin: 0;
+    }
+  }
   table {
     border-color: #fff;
     thead {
@@ -340,9 +359,11 @@ $scheme: nth($schemes, 1);
         color: #fff;
         text-align: center;
         .dropdown {
+          display: inline-block;
           .btn {
             line-height: 0.8;
             border-radius: 0;
+            padding: 8px 15px;
           }
         }
       }
@@ -372,6 +393,9 @@ $scheme: nth($schemes, 1);
         .popover {
           color: $gray-base;
           line-height: 1.45;
+        }
+        &.status {
+          cursor: pointer;
         }
         &.red {
           background-color: #ff1d23;
