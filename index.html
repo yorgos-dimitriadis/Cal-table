@@ -26,38 +26,38 @@
             <div class="col-sm-12">
               <div class="cal-table-wrapper center-block">
                 <div class="arrows center-block">
-                  <a href="#" aria-label="Previous" class="pull-left"><h3 aria-hidden="true">&laquo;</h3></a>
+                  <a href="#" aria-label="Previous" class="pull-left"><h3 aria-hidden="true">&laquo; <span style="font-size:0.65em" class="valign-middle">Title</span></h3></a>
                   <a href="#" aria-label="Next" class="pull-right"><h3 aria-hidden="true">&raquo;</h3></a>
                 </div>
                 <table width="1086" align="center" border="1" cellspacing="0" cellpadding="0">
                   <thead>
                     <tr>
                       <th class="side-caption">
-                        <div class="dropdown">
-                          <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Μήνας
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="Ιανουάριος">Ιανουάριος</a></li>
-                            <li><a href="Φεβρουάριος">Φεβρουάριος</a></li>
-                            <li><a href="Μάρτιος">Μάρτιος</a></li>
-                            <li><a href="Απρίλιος">Απρίλιος</a></li>
-                            <li><a href="Μάιος">Μάιος</a></li>
-                            <li><a href="Ιούνιος">Ιούνιος</a></li>
-                            <li><a href="Ιούλιος">Ιούλιος</a></li>
-                            <li><a href="Αύγουστος">Αύγουστος</a></li>
-                            <li><a href="Σεπτέμβριος">Σεπτέμβριος</a></li>
-                            <li><a href="Οκτώβριος">Οκτώβριος</a></li>
-                            <li><a href="Νοέμβριος">Νοέμβριος</a></li>
-                            <li><a href="Δεκέμβριος">Δεκέμβριος</a></li>
-                          </ul>
-                        </div>
-
+                        <select name="month" id="month">
+                          <option value="Ιανουάριος">Ιανουάριος</option>
+                          <option value="Φεβρουάριος">Φεβρουάριος</option>
+                          <option value="Μάρτιος">Μάρτιος</option>
+                          <option value="Απρίλιος">Απρίλιος</option>
+                          <option value="Μάιος">Μάιος</option>
+                          <option value="Ιούνιος">Ιούνιος</option>
+                          <option value="Ιούλιος">Ιούλιος</option>
+                          <option value="Αύγουστος">Αύγουστος</option>
+                          <option value="Σεπτέμβριος">Σεπτέμβριος</option>
+                          <option value="Οκτώβριος">Οκτώβριος</option>
+                          <option value="Νοέμβριος">Νοέμβριος</option>
+                          <option value="Δεκέμβριος">Δεκέμβριος</option>
+                        </select>                    
+                        <select name="year" id="">
+                          <option value="2016">2016</option>
+                          <option value="2017">2017</option>
+                          <option value="2018">2018</option>
+                          <option value="2019">2019</option>
+                        </select>
+                        <!-- - ->
                         <div class="dropdown">
                           <button class="btn btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Έτος
-                            <span class="caret"></span>
+                            <span class="caret"></span
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <li><a href="#">2016</a></li>
@@ -66,6 +66,7 @@
                             <li><a href="#">2019</a></li>
                           </ul>
                         </div>
+                        <!-- -->
                       </th>
                       <th>1</th>
                       <th>2</th>
@@ -211,6 +212,12 @@
     $('[data-toggle="popover"]').popover(
       html: true
     );
+    
+    $(".dropdown-menu li a").click(function(){
+      var selText = $(this).text();
+      $(this).parents('.btn-group').find('.dropdown-toggle').html(selText+' <span class="caret"></span>');
+    });
+    
   });
   </script>
 

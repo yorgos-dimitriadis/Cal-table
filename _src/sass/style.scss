@@ -36,24 +36,8 @@ section {
   max-width: 1429px;
 }
 
-.columns-top-space {
-  & > [class*="col-"] {
-    margin-top: 10px;
-    padding-bottom: 10px;
-    .row div:nth-of-type(2) {
-      padding-top: 5px;
-    }
-  }
-  &.b-bd > [class*="col-"]:not(:last-child):after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    border: 1px solid $gray;
-    width: calc(100% - 30px);
-    height: 1px;
-    margin-left: 15px;
-  }
+.valign-middle {
+  vertical-align: middle;
 }
 
 .bg-general {
@@ -71,24 +55,6 @@ section {
       @include background-size(contain);
       background-position-x: 75%; 
     }
-  }
-}
-
-.bg-video {
-  padding-top: 20%;
-  padding-bottom: 8%;
-  @media (min-width: $screen-md-min) {
-    padding-top:23%;
-    padding-bottom: 10%;
-  }
-}
-
-.bg-video.bg-variant-1 {
-  padding-top: 4%;
-  padding-bottom: 3%;
-  @media (min-width: $screen-md-min) {
-    padding-top: 11%;
-    padding-bottom: 8%;
   }
 }
 
@@ -150,85 +116,6 @@ section {
   @include center-abs;
   cursor: pointer;
   z-index: 99998;
-}
-
-.breadcrumbs-custom {
-  &.abs {
-    display: block;
-    position: absolute;
-    top: 2%;
-    left: 3.5%;
-    z-index: 9;
-  }
-}
-
-/*
- * Promo Banners
- */
-#p-banners {
-  h5 { text-align: center; }
-  a {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    &:hover, &:focus {
-      color: inherit;
-      text-decoration: none;
-    }
-  }
-  .caption {
-    position: relative;
-    background-color: $white;
-    padding: 3% 2.5%;
-    cursor: pointer;
-    min-height: 350px;
-  }
-  
-  .left-b-rounded, .right-b-rounded {
-    display: none;
-  }
-
-  &.rounded-corners-in .caption {
-    position: relative;
-    background-color: $white;
-    padding: 3% 2.5%;
-    cursor: pointer;
-    &:after, &:before {
-      content: '';
-      position: absolute;
-      top: -20px; 
-      width: 0;
-      background: $silver-lighter;
-      border-radius: 80px;
-      border-top: 40px solid $silver-lighter;
-      border-left: 40px solid $silver-lighter;
-    }
-    &:after {
-      right: -20px;
-    }
-    &:before {
-      left: -20px;
-    }
-    .left-b-rounded, .right-b-rounded {
-      position: absolute;
-      display: block;
-      bottom: -20px; 
-      width: 0;
-      background: $silver-lighter;
-      border-radius: 80px;
-      border-top: 40px solid $silver-lighter;
-      border-left: 40px solid $silver-lighter;
-    }
-    .left-b-rounded {
-      left: -20px;
-    }
-    .right-b-rounded {
-      right: -20px;
-    }
-  }
-  .collapse {
-    margin-top: 15px;
-  }
 }
 
 /*  Gallery Simple */ 
@@ -302,32 +189,6 @@ section {
 
 
 
-.enalax {
-  .descbox {
-    padding-left: 4.5%;
-    padding-right: 2.5%;
-  }
-  .range {
-    margin-top: 0;
-  }
-  [class*="cell-"] {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  .bg-general.hero {
-    padding: 7% 0 8%;
-  }
-  .hero {
-    @include heading() {
-      color: $white; 
-    }
-  }
-  &.hero p {
-    font-size: 1.15em;
-  }
-}
-
-
 /*
  * Misc
  */
@@ -358,7 +219,17 @@ section {
         background-color: #197c99;
         color: #fff;
         text-align: center;
+        select {
+          background-color: #197c99;
+          option {
+            color: $gray-base;
+            background-color: $white;
+          }
+        }
         .dropdown {
+          button {
+            background-color: #197c99;
+          }
           display: inline-block;
           .btn {
             line-height: 0.8;
