@@ -213,7 +213,8 @@ section {
         height: 100%; }
       .cal-table-wrapper table tbody td .popover {
         color: #2b2c2f;
-        line-height: 1.45; }
+        line-height: 1.45;
+        min-width: 260px; }
       .cal-table-wrapper table tbody td.status {
         cursor: pointer; }
       .cal-table-wrapper table tbody td.red {

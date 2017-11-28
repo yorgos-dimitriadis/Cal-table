@@ -264,6 +264,7 @@ section {
         .popover {
           color: $gray-base;
           line-height: 1.45;
+          min-width: 260px;
         }
         &.status {
           cursor: pointer;
