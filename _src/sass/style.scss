@@ -263,8 +263,9 @@ section {
         }
         .popover {
           color: $gray-base;
+          font-size: 15px;
           line-height: 1.45;
-          min-width: 260px;
+          min-width: 320px;
         }
         &.status {
           cursor: pointer;
