@@ -263,39 +263,42 @@ section {
       /* line 264, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td .popover {
         color: #2b2c2f;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1.45;
-        min-width: 320px; }
-      /* line 270, ../../_src/sass/style.scss */
+        min-width: 320px;
+        max-width: none;
+        white-space: nowrap;
+        overflow: visible; }
+      /* line 273, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.status {
         cursor: pointer; }
-      /* line 273, ../../_src/sass/style.scss */
+      /* line 276, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red {
         background-color: #ff1d23; }
-      /* line 276, ../../_src/sass/style.scss */
+      /* line 279, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.black-dot {
         background-image: url("../images/black-dot.png"); }
-      /* line 279, ../../_src/sass/style.scss */
+      /* line 282, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red-black-dot {
         background-color: transparent;
         background-image: url("../images/red-black-dot.gif"); }
-      /* line 283, ../../_src/sass/style.scss */
+      /* line 286, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red-white-red {
         background-color: transparent;
         background-image: url("../images/red-white-red.gif"); }
-      /* line 287, ../../_src/sass/style.scss */
+      /* line 290, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red-white-red-blackdot {
         background-color: transparent;
         background-image: url("../images/red-white-red-blackdot.gif"); }
-      /* line 291, ../../_src/sass/style.scss */
+      /* line 294, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.red-white-green {
         background-color: transparent;
         background-image: url("../images/red-white-green.gif"); }
-      /* line 295, ../../_src/sass/style.scss */
+      /* line 298, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody td.green-white-red {
         background-color: transparent;
         background-image: url("../images/green-white-red.gif"); }
-    /* line 300, ../../_src/sass/style.scss */
+    /* line 303, ../../_src/sass/style.scss */
     .cal-table-wrapper table tbody .side-caption {
       text-align: center;
       vertical-align: middle;
@@ -304,10 +307,10 @@ section {
       background-color: transparent;
       color: #2b2c2f;
       font-size: 14px; }
-    /* line 309, ../../_src/sass/style.scss */
+    /* line 312, ../../_src/sass/style.scss */
     .cal-table-wrapper table tbody .hor-line {
       background-color: transparent; }
-      /* line 312, ../../_src/sass/style.scss */
+      /* line 315, ../../_src/sass/style.scss */
       .cal-table-wrapper table tbody .hor-line.top hr {
         margin-top: 10px;
         margin-bottom: 10px; }

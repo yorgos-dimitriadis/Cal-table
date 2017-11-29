@@ -213,9 +213,12 @@ section {
         height: 100%; }
       .cal-table-wrapper table tbody td .popover {
         color: #2b2c2f;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 1.45;
-        min-width: 320px; }
+        min-width: 320px;
+        max-width: none;
+        white-space: nowrap;
+        overflow: visible; }
       .cal-table-wrapper table tbody td.status {
         cursor: pointer; }
       .cal-table-wrapper table tbody td.red {

@@ -263,9 +263,12 @@ section {
         }
         .popover {
           color: $gray-base;
-          font-size: 15px;
+          font-size: 13px;
           line-height: 1.45;
           min-width: 320px;
+          max-width: none;
+          white-space: nowrap;
+          overflow: visible;
         }
         &.status {
           cursor: pointer;

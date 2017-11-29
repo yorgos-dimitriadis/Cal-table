@@ -146,7 +146,7 @@
                     <td></td>
                     <td></td>
                      <td class="status red-white-red">
-                      <div class="info-box i2" data-toggle="popover" data-html="true" data-placement="left" data-content="User 1 1:00 - 1:00 | <a href='#'>Αρ. 0001</a><br>User 2 1:00 - 1:00 | <a href='#'>Αρ. 0002</a><br>User 3 1:00 - 1:00 | <a href='#'>Αρ. 0003</a><br>User 4 1:00 - 1:00 | <a href='#'>Αρ. 0004</a><br>User 5 1:00 - 1:00 | <a href='#'>Αρ. 0005</a><br>User 6 1:00 - 1:00 | <a href='#'>Αρ. 0006</a><br>User 7 1:00 - 1:00 | <a href='#'>Αρ. 0007</a><br>User 8 1:00 - 1:00 | <a href='#'>Αρ. 0008</a><br>User 9 1:00 - 1:00 | <a href='#'>Αρ. 0009</a><br>"></div>
+                      <div class="info-box" data-toggle="popover" data-html="true" data-placement="left" data-content="User 1 1:00 - 1:00 | <a href='#'>Αρ. 0001</a><br>User 2 1:00 - 1:00 | <a href='#'>Αρ. 0002</a><br>User 3 1:00 - 1:00 | <a href='#'>Αρ. 0003</a><br>User 4 1:00 - 1:00 | <a href='#'>Αρ. 0004</a><br>User 5 1:00 - 1:00 | <a href='#'>Αρ. 0005</a><br>User 6 1:00 - 1:00 | <a href='#'>Αρ. 0006</a><br>User 7 1:00 - 1:00 | <a href='#'>Αρ. 0007</a><br>User 8 1:00 - 1:00 | <a href='#'>Αρ. 0008</a><br>User 9 1:00 - 1:00 | <a href='#'>Αρ. 0009</a><br>"></div>
                     </td>
                   </tr>
                   <tr>
@@ -216,13 +216,26 @@
 $(document).ready(function() {
   
   $('[data-toggle="popover"]').popover({
-    html: true
+    html: true,
+    trigger: 'focus'
   });
-
+  
+  $('body').on('click', function(e) {
+    $('.popover').each(function () {
+      var popover = $(this).data('bs.popover');
+      if( !popover.$element.is(e.target) ) {
+          popover.inState.click = false;
+          popover.hide();                
+      }
+    });
+  });
+  
+  /*
   $('[data-toggle="popover"]').on('show.bs.popover', function (e) {
-    console.log(e.targetarget);
+    //console.log(e.targetarget);
     $('[data-toggle="popover"]').not(this).popover('hide');
   });
+  */
 
 });
 </script>
