@@ -299,6 +299,22 @@ section {
           background-color: transparent;
           background-image: url('../images/green-white-red.gif');
         }
+        &.green-blue {
+          background-color: transparent;
+          background-image: url('../images/green-blue.gif');
+        }
+        &.blue-green {
+          background-color: transparent;
+          background-image: url('../images/blue-green.gif');
+        }
+        &.blue-red {
+          background-color: transparent;
+          background-image: url('../images/blue-red.gif');
+        } 
+        &.red-blue {
+          background-color: transparent;
+          background-image: url('../images/red-blue.gif');
+        } 
       }
       .side-caption {
         text-align: center;
